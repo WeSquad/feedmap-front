@@ -1,10 +1,10 @@
 steps:
 # Install
-- name: 'node:10.16.0'
-  args: ['npm install']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['install']
 # Test
-#- name: 'node:10.16.0'
-#  args: ['npm run', 'test:unit']
+#- name: 'gcr.io/cloud-builders/npm'
+#  args: ['run', 'test:unit']
 # Build
-- name: 'node:10.16.0'
-  args: ['npm run', 'build']
+- name: 'gcr.io/cloud-builders/npm'
+  args: ['build']
