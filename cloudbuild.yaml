@@ -1,10 +1,10 @@
 steps:
 # Install
 - name: 'node:10.16.0'
-  args: ['install']
+  args: ['npm install']
 # Test
 #- name: 'node:10.16.0'
-#  args: ['run', 'test:unit']
+#  args: ['npm run', 'test:unit']
 # Build
 - name: 'node:10.16.0'
-  args: ['run', 'build']
+  args: ['npm run', 'build']
