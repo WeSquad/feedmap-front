@@ -2,13 +2,22 @@ steps:
 # Install
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
+  volumes:
+  - name: 'feedmap_front'
+    path: '/feedmap_front'
 # Test
 #- name: 'gcr.io/cloud-builders/npm'
 #  args: ['run', 'test:unit']
 # Build
 - name: 'gcr.io/cloud-builders/npm'
   args: ['build']
+  volumes:
+  - name: 'feedmap_front'
+    path: '/feedmap_front'
 # Deploy
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
+  volumes:
+  - name: 'feedmap_front'
+    path: '/feedmap_front'
 timeout: "1600s"
