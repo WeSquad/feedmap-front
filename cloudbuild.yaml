@@ -2,19 +2,17 @@ steps:
 # Install
 - name: 'gcr.io/cloud-builders/npm'
   args: ['install']
-  dir: 'feedmap_front'
 
 # Test
 #- name: 'gcr.io/cloud-builders/npm'
 #  args: ['run', 'test:unit']
+
 # Build
 - name: 'gcr.io/cloud-builders/npm'
   args: ['build']
-  dir: 'feedmap_front'
 
 # Deploy
-- name: "gcr.io/cloud-builders/gcloud"
-  args: ["app", "deploy"]
-  dir: 'feedmap_front'
+- name: 'gcr.io/$PROJECT_ID/firebase'
+  args: ['deploy']
 
 timeout: "1600s"
